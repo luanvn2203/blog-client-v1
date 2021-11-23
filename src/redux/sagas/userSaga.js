@@ -7,16 +7,21 @@ import { ahihi } from "../slices/userSlice";
 export function* fetchDataSaga() {
   try {
     console.log('call');
-    let result = yield call(() => userAPI.getMe());
+    let result = yield call(() =>
+      userAPI.register({
+        email: "dangquocthai07061998ss@gmail.com",
+        password: "123456",
+      })
+    );
     console.log(result)
-    // yield put(fetchData(result.data));
-    yield put(ahihi(result));
 
   } catch (e) {
+    console.log(e)
     yield put({ type: "TODO_FETCH_FAILED" });
   }
 }
 
-export  function* userSaga() {
+export function* userSaga() {
   yield takeEvery(userAction.FETCH_DATA_SAGA, fetchDataSaga);
+
 }

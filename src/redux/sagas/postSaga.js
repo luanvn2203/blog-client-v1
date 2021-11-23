@@ -1,20 +1,23 @@
 import { call, takeEvery, put } from "redux-saga/effects";
 // import Axios from "axios";
-import { userReducer } from "../reducers/userReducer";
-import { sagaActions } from "../action/userAction";
+import { userAction } from "../action/userAction";
 import userAPI from '../../apis/user'
+import { ahihi } from "../slices/userSlice";
 
-export function* fetchPostSaga() {
+export function* fetchDataSaga() {
   try {
     console.log('call');
     let result = yield call(() => userAPI.getMe());
-    yield put(userReducer.ahihi(result));
+    console.log(result)
+    // yield put(fetchData(result.data));
+    yield put(ahihi(result));
 
   } catch (e) {
     yield put({ type: "TODO_FETCH_FAILED" });
   }
 }
 
-export default function* postSaga() {
-  yield takeEvery(sagaActions.FETCH_DATA_SAGA, fetchPostSaga);
+export  function* postSaga() {
+  yield takeEvery(userAction.FETCH_DATA_SAGA, fetchDataSaga);
+
 }

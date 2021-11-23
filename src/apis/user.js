@@ -1,7 +1,7 @@
 import axiosClient from "./axiosClient";
 
 // const baseUrl = process.env.REACT_APP_AUTH_API;
-const baseUrl = 'http://localhost:8017/user';
+const baseUrl = 'http://localhost:8017';
 
 
 const userAPI = {
@@ -10,7 +10,7 @@ const userAPI = {
     return axiosClient.post(url, { params });
   },
   getMe: () => {
-    const url = 'http://localhost:8017/user/register';
+    const url = baseUrl + "/register";
     return axiosClient.get(url);
   },
   logout: () => {
@@ -18,7 +18,7 @@ const userAPI = {
     return axiosClient.delete(url);
   },
   register: (params) => {
-    const url = baseUrl + "/register";
+    const url = 'http://localhost:8017/user/register';
     return axiosClient.post(url, { params });
   },
   refresh: () => {
