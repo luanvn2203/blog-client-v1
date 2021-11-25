@@ -37,3 +37,6 @@
     transform: translateY(0px);
   }
 }
+#root {
+  background-color: #f5f2f2;
+}

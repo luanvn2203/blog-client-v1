@@ -1,0 +1,13 @@
+.hf__wrapper {
+    max-width: 1160px;
+    margin: auto;
+    .hf__container {
+        display: flex;
+    }
+}
+@media (max-width: 1080px) {
+    .hf__wrapper {
+        max-width: 1080px;
+        margin: 0 20px;
+    }
+}
