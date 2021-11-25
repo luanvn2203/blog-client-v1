@@ -1,0 +1,28 @@
+.hc__wrapper {
+    max-width: 1160px;
+    height: 100%;
+    margin: auto;
+    margin-top: 39px;
+    background: #fafafa;
+    .hc__container {
+        display: flex;
+        justify-content: space-between;
+        .hc__leftContent {
+            width: 65%;
+            height: auto;
+        }
+        .hc__rightContent {
+            width: 32%;
+            height: auto;
+            background-color: blue;
+        }
+    }
+}
+@media (max-width: 1080px) {
+    .hc__wrapper {
+        max-width: 1080px;
+        .hc__container {
+            margin: 0 20px;
+        }
+    }
+}

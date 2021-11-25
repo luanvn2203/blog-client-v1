@@ -1,18 +1,29 @@
-import { useDispatch, useSelector } from 'react-redux';
-import './App.css';
-import { userAction } from './redux/action/userAction';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import { mainRouter } from "./configs/router";
+import NavbarController from "./pages/Header";
 
 function App() {
-  const dispatch = useDispatch()
-  const state = useSelector(state => state);
-  console.log(state)
-
+  const renderMainRouter = () => {
+    return mainRouter.map(({ path, exact, Component }, index) => {
+      console.log(Component);
+      return (
+        <Route
+          key={index}
+          exact={exact}
+          path={path}
+          element={Component}
+        ></Route>
+      );
+    });
+  };
   return (
-    <div>
-      <button onClick={() => dispatch({ type: userAction.FETCH_DATA_SAGA })}>
-        Getdata
-      </button>
-    </div>
+    <>
+      <NavbarController />
+      <Router>
+        <Routes>{renderMainRouter()}</Routes>
+      </Router>
+    </>
   );
 }
 
