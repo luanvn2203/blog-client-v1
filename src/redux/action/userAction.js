@@ -1,4 +1,5 @@
 export const userAction = {
-    FETCH_DATA_SAGA: "FETCH_DATA_SAGA"
-  };
-  
+  FETCH_DATA_SAGA: "FETCH_DATA_SAGA",
+  USER_LOGIN: "USER_LOGIN",
+  USER_REGISTER: "USER_REGISTER",
+};

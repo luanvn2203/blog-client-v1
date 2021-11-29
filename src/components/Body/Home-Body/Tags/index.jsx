@@ -13,7 +13,11 @@ function Tags() {
   const renderList = () => {
     if (data.length > 0) {
       return data.map((item, index) => {
-        return <li className="tag__item">{item.name}</li>;
+        return (
+          <li className="tag__item" key={index}>
+            {item.name}
+          </li>
+        );
       });
     }
   };

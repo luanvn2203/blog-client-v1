@@ -27,12 +27,7 @@ function HeaderNavbar() {
           <div className="hn__list">
             <ul>
               <li className="hn__item">
-                <NavLink
-                  activeClassName="active-home"
-                  className="header__home"
-                  to="/2"
-                  exact={true}
-                >
+                <NavLink className="header__home" to="/2">
                   Trang chủ
                 </NavLink>
               </li>
@@ -47,12 +42,7 @@ function HeaderNavbar() {
                 </Dropdown>
               </li>
               <li className="hn__item">
-                <NavLink
-                  activeClassName="active-game"
-                  className="header__home"
-                  to="/2"
-                  exact={true}
-                >
+                <NavLink className="header__home" to="/2">
                   Game
                 </NavLink>
               </li>

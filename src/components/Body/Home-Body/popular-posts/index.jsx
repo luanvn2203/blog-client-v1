@@ -16,7 +16,7 @@ function PopularPosts() {
     if (data.length > 0) {
       return data.map((item, index) => {
         return (
-          <li className="pp__item">
+          <li className="pp__item" key={index}>
             <div className="pp__image">
               <a href={item.link} target="_blank" rel="noreferrer">
                 <img src={item.image} alt={item.image} />

@@ -17,7 +17,7 @@ function RecentComments() {
     if (data.length > 0) {
       return data.map((item, index) => {
         return (
-          <li className="rc__item">
+          <li className="rc__item" key={index}>
             <div className="rc__image">
               <img src={item.image} alt={item.image} />
             </div>

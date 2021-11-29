@@ -1,27 +1,26 @@
-import {
-    createSlice,
-} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 export const userSlice = createSlice({
-    name: "user",
-    initialState: {
-        user: {},
-        text: ""
+  name: "user",
+  initialState: {
+    user: {},
+    registerSuccess: false,
+    duplicateEmail: false,
+  },
+  reducers: {
+    saveUserLogin: (state, action) => {
+      return {
+        ...state,
+        user: action.payload,
+      };
     },
-    reducers: {
-        fetchData: (state, action) => {
-            return {
-                todos: action.payload
-            };
-        },
-        ahihi: (state, action) => {
-            return {
-                ...state,
-                text: action.payload
-            };
-        },
-    }
+    resetFormResgister: (state, action) => {
+      return {
+        ...state,
+        registerSuccess: action.payload,
+      };
+    },
+  },
 });
 
-export const { fetchData } = userSlice.actions;
-export const { ahihi } = userSlice.actions;
+export const { saveUserLogin, resetFormResgister } = userSlice.actions;

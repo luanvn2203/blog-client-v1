@@ -26,7 +26,7 @@
             a {
                 position: absolute;
                 top: 50%;
-                right: 0;
+                right: 50px;
                 transform: translateY(-50%);
                 img {
                     vertical-align: middle;
@@ -40,7 +40,22 @@
                     }
                 }
                 &:first-child {
-                    right: 50px;
+                    right: 100px;
+                }
+            }
+            .hi__account {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                vertical-align: middle;
+                width: 36px;
+                height: 36px;
+                opacity: 0.5;
+                transition: all 0.5s ease;
+                &:hover {
+                    cursor: pointer;
+                    opacity: 1;
                 }
             }
         }

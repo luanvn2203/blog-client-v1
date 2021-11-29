@@ -16,7 +16,7 @@ function RandomPosts() {
     if (data.length > 0) {
       return data.map((item, index) => {
         return (
-          <li className="rp__item">
+          <li className="rp__item" key={index}>
             <div className="rp__image">
               <a href={item.link} target="_blank" rel="noreferrer">
                 <img src={item.image} alt={item.image} />

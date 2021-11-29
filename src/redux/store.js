@@ -1,20 +1,18 @@
-
-import {
-  configureStore,
-  getDefaultMiddleware
-} from "@reduxjs/toolkit";
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
 import rootSaga from "./sagas/index";
-import { userSlice } from './slices/userSlice';
+import { modalState } from "./slices/modalState";
+import { userSlice } from "./slices/userSlice";
 
 let sagaMiddleware = createSagaMiddleware();
 const middleware = [...getDefaultMiddleware({ thunk: false }), sagaMiddleware];
 
 export const store = configureStore({
   reducer: {
-    user: userSlice.reducer
+    user: userSlice.reducer,
+    modal: modalState.reducer,
   },
-  middleware
+  middleware,
 });
 
 sagaMiddleware.run(rootSaga);

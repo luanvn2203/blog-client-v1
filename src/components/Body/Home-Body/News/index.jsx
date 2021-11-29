@@ -18,7 +18,7 @@ function News() {
     if (data.length > 0) {
       return data.map((item, index) => {
         return (
-          <div className="n__item">
+          <div className="n__item" key={index}>
             <img src={item.picture} alt="pictures" />
             <div className="n__itemContent">
               <h2>

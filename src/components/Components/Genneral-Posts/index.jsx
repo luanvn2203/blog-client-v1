@@ -5,7 +5,7 @@ function GenneralPosts(props) {
     if (props.data.length > 0) {
       return props.data.map((item, index) => {
         return (
-          <li className="gp__item">
+          <li className="gp__item" key={index}>
             <div className="gp__image">
               <a href={item.link} target="_blank" rel="noreferrer">
                 <img src={item.image} alt={item.image} />
